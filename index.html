@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>NDI QUIZ</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+		<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timecircles/1.5.3/TimeCircles.min.css" />
+		<style>
+			.topic-sections {
+    overflow-x: scroll;
+}	
+.swiper-topic{
+	overflow-x: hidden;
+}
+.question-no {
+    border: 2px solid;
+    padding: 3px 5px;
+    border-radius: 30px;
+}
+.question-circle {
+	display: inline-block;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    margin:5px;
+}
+.question-info .question-circle{
+  margin:0 5px 0 0;
+}
+.answered {color: #fff; border:0; background-color: #23d160;}
+.marked {color: #fff; border:0;  background-color: #209cee; }
+.not-visited {color: #202020; background-color: #f5f5f5; }
+.marked-answered {color: #fff; border:0;  background-color: #00d1b2; }
+.not-answered {color: #fff; border:0;  background-color: #ff3860; }
+.question-option { display: flex; flex-direction: column; }
+.question-option .pretty { margin:10px 0; }
+.question-container {min-height: 80vh;}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    left: unset;
+    right: 0;
+}
+.swiper-button-next, .swiper-button-prev {
+    position: unset;
+    top: unset;
+    width: unset;
+    height: unset;
+    margin-top: unset;
+    z-index: 10;
+    cursor: pointer;
+    display: unset;
+    align-items: unset;
+    justify-content: unset;
+    color: #fff;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+	content :"";
+	font-size: unset;
+}
+.swiper-pagination-progressbar {
+    background: rgba(0, 0, 0, 0.06);
+    position: absolute;
+    border-radius: 3px;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+{
+    border-radius: 3px;
+}
+.swiper-pagination {
+    position: unset;
+    text-align: justify;
+}
+		</style>
+	</head>
+	<body>
+		
+		<!-- /////////////////////////////////////////////////////////////////// -->
+		<nav class="navbar navbar-light bg-light p-0">
+			<div class="container-fluid justify-content-between">
+				<div class="d-flex aligin-items-center">
+					<a class="navbar-brand mr-4" href="#">
+						<img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top">
+					</a>
+					<span class="ml-2 navbar-text text-uppercase">
+						this will be the topic of the quiz
+					</span>
+				</div>
+				<div class="d-flex aligin-items-center">
+					<span class="navbar-text my-0 mr-2">					
+							Jhon Doe
+					</span>	
+					<a class="navbar-text text-danger my-0">
+						Exit <i class="la la-sign-out"></i>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<!-- /////////////////////////////////////////////////////////////////// -->
+		
+
+		<!-- /////////////////////////////////////////////////////////////////// -->
+		<div class="container-fluid">
+			<div class="row">
+
+				<!-- LEFT SECTION START -->
+				<div class="col-md-9 h-100">
+					
+					<!-- SUBJECTS SECTION START -->
+					<div class="topic-section py-2">
+						<button class="btn btn-primary btn-sm mr-2">Reasoning Ability</button>
+					    <button class="btn btn-primary btn-sm mr-2">Quantitative Aptitude</button>
+					    <button class="btn btn-primary btn-sm mr-2">English Language</button>
+					    <button class="btn btn-primary btn-sm mr-2">General Knoweldge</button>
+					    <button class="btn btn-primary btn-sm mr-2">Computers</button>
+					    <button class="btn btn-primary btn-sm mr-2">General Awarness</button>
+					</div>
+					<!-- SUBJECTS SECTION END-->
+
+
+					<div class="swiper-container">
+						
+					    <div class="swiper-wrapper">
+
+						<!-- QUESTION CONTAINER START -->
+						<div class="swiper-slide question-container py-2">
+							<div class="question-number">
+								<span class="question-no">Q. 29</span>
+								<b class="text-success">+ 1.0</b>
+								<b class="text-danger">- 0.25</b>
+							</div>
+							<hr>
+							
+							<div class="row">
+								<!-- QUESTION -->
+								<div class="col-xs-12 col-sm-12 col-md-7">
+									<div class="questions">
+										<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, laboriosam.</h4>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, enim?</p>
+										<ol>
+											<li>Lorem ipsum dolor sit amet.</li>
+											<li>Lorem ipsum dolor sit amet.</li>
+											<li>Lorem ipsum dolor sit amet.</li>
+											<li>Lorem ipsum dolor sit amet.</li>
+										</ol>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quidem eveniet cumque, commodi, vero laboriosam.</p>
+									</div>
+								</div>
+
+								<!-- OPTIONS -->
+								<div class="col-xs-12 col-sm-12 col-md-5 border-left">
+									<div class="question-option">
+										<h5>Options:</h5>
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio" name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>a) Option One</label>
+									        </div>
+									    </div>								
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio"  name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>b) Option Two</label>
+									        </div>
+									    </div>								
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio"  name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>c) Option Three</label>
+									        </div>
+									    </div>								
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio"  name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>d) Option four</label>
+									        </div>
+									    </div>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- ACTIONS -->
+								<div class="d-flex bg-light justify-content-between py-2">
+									<div class="meta-button">
+										<button class="btn btn-outline-secondary btn-sm text-danger">
+											<i class="la la-flag mr-2"></i>
+											Report Error
+										</button>
+										<button class="btn btn-outline-secondary btn-sm">
+											Mark for Review and Next
+										</button>
+										<button class="btn btn-outline-secondary btn-sm">
+											Clear Response
+										</button>
+									</div>
+									<div class="meta-button">
+										<button class="swiper-button-prev btn btn-primary btn-sm">Previous</button>
+										<button class="swiper-button-next btn btn-primary btn-sm">Save & Next</button>
+									</div>
+								</div>
+						</div>					
+
+						<div class="swiper-slide question-container py-2">
+							<div class="question-number">
+								<span class="question-no">Q. 29</span>
+								<b class="text-success">+ 1.0</b>
+								<b class="text-danger">- 0.25</b>
+							</div>
+							<hr>
+							
+							<div class="row">
+								<!-- QUESTION -->
+								<div class="col-xs-12 col-sm-12 col-md-7">
+									<div class="questions">
+										<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, laboriosam.</h4>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, enim?</p>
+										<ol>
+											<li>Lorem ipsum dolor sit amet.</li>
+											<li>Lorem ipsum dolor sit amet.</li>
+											<li>Lorem ipsum dolor sit amet.</li>
+											<li>Lorem ipsum dolor sit amet.</li>
+										</ol>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quidem eveniet cumque, commodi, vero laboriosam.</p>
+									</div>
+								</div>
+
+								<!-- OPTIONS -->
+								<div class="col-xs-12 col-sm-12 col-md-5 border-left">
+									<div class="question-option">
+										<h5>Options:</h5>
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio" name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>a) Option One</label>
+									        </div>
+									    </div>								
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio"  name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>b) Option Two</label>
+									        </div>
+									    </div>								
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio"  name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>c) Option Three</label>
+									        </div>
+									    </div>								
+									    <div class="pretty p-icon p-round p-pulse">
+									        <input type="radio"  name="option"/>
+									        <div class="state p-success">
+									            <i class="icon la la-check"></i>
+									            <label>d) Option four</label>
+									        </div>
+									    </div>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- ACTIONS -->
+								<div class="d-flex bg-light justify-content-between py-2">
+									<div class="meta-button">
+										<button class="btn btn-outline-secondary btn-sm text-danger">
+											<i class="la la-flag mr-2"></i>
+											Report Error
+										</button>
+										<button class="btn btn-outline-secondary btn-sm">
+											Mark for Review and Next
+										</button>
+										<button class="btn btn-outline-secondary btn-sm">
+											Clear Response
+										</button>
+									</div>
+									<div class="meta-button">
+										<button class="swiper-button-prev btn btn-primary btn-sm">Previous</button>
+										<button class="swiper-button-next btn btn-primary btn-sm">Save & Next</button>
+									</div>
+								</div>
+						</div>
+
+						<!-- QUESTION LIST CONTAINER END -->
+					   </div>
+					</div>
+				</div>
+				<!-- LEFT SECTION END -->
+
+				<!-- RIGHT SECTION START -->
+				<div class="col-md-3 d-xs-none d-md-block bg-light h-100">
+					<div class="example" data-date="2020-06-11 17:40:00"></div>
+
+					<hr class="my-2">
+
+					<!-- QUESTION INFORMATION START -->
+					<div class="question-info d-flex flex-wrap py-2">
+						<div class="d-flex aligin-items-center m-1">
+							<span class="question-circle answered">5</span>
+							Answered
+						</div>
+						<div class="d-flex aligin-items-center m-1">
+							<span class="question-circle marked">23</span>
+							Marked
+						</div>
+						<div class="d-flex aligin-items-center m-1">
+							<span class="question-circle not-visited">22</span>
+							Not Visited
+						</div>
+						<div class="d-flex aligin-items-center m-1">
+							<span class="question-circle marked-answered">5</span>
+							Marked & Answered
+						</div>
+						<div class="d-flex aligin-items-center m-1">
+							<span class="question-circle not-answered">23</span>
+							Not Answered
+						</div>
+					</div>
+					<!-- QUESTION INFORMATION END -->
+					<hr class="my-2">
+
+					<!-- QUESTIONS START -->
+
+					<div class="question-number">
+						<div class="swiper-pagination"></div>
+					</div>
+
+					<!-- QUESTIONS END -->
+					<hr class="my-2">
+
+					<button class="btn btn-primary btn-block">SUBMIT</button>
+
+				</div>
+				<!-- RIGHT SECTION END -->
+			</div>
+		</div>
+		<!-- /////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/timecircles/1.5.3/TimeCircles.min.js"></script>
+		  <script>
+		    var swiper = new Swiper('.swiper-container', {
+		      navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev',
+		      },
+		      pagination: {
+		        el: '.swiper-pagination',
+		        clickable: true,
+		        renderBullet: function (index, className) {
+		          return '<a class="question-circle ' + className + '">' + (index + 1) + '</a>';
+		        },
+		      }
+		    });
+		    $(".example").TimeCircles(
+	    		{ time: 
+    				{ Days: 
+						{ show: false }
+					}
+				}).addListener(function(unit, value, total) {
+			    if(total <= 0){
+			    	console.log("Time is ended");
+			    } ;
+			});
+		  </script>
+	</body>
+</html>
